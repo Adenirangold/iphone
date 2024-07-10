@@ -23,7 +23,7 @@
     "build": "react-scripts build && npm run sentry:sourcemaps",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org adeniran --project iphone-clone ./app.js && sentry-cli sourcemaps upload --org adeniran --project iphone-clone ./app.js"
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org adeniran --project iphone-clone ./build/static/js/*.js && sentry-cli sourcemaps upload --org adeniran --project iphone-clone ./build/static/js --rewrite"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
