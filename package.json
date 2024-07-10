@@ -6,6 +6,8 @@
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",
+    "@sentry/cli": "^2.32.1",
+    "@sentry/react": "^8.16.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,9 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run sentry:sourcemaps",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org adeniran --project iphone-clone ./app.js && sentry-cli sourcemaps upload --org adeniran --project iphone-clone ./app.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
